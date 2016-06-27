@@ -1,25 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MiRuta" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="UuO-QQ-3Aa">
+                                <rect key="frame" x="-4" y="20" width="328" height="505"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24u-c5-0C1">
+                                <rect key="frame" x="18" y="533" width="50" height="30"/>
+                                <state key="normal" title="Normal"/>
+                                <connections>
+                                    <action selector="vistaNormal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JbH-bP-lse"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jqo-Ei-UWO">
+                                <rect key="frame" x="134" y="533" width="52" height="30"/>
+                                <state key="normal" title="Satélite"/>
+                                <connections>
+                                    <action selector="vitaSatelite:" destination="BYZ-38-t0r" eventType="touchUpInside" id="llr-9o-DIC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Km-bZ-In6">
+                                <rect key="frame" x="256" y="533" width="51" height="30"/>
+                                <state key="normal" title="Híbrido"/>
+                                <connections>
+                                    <action selector="vistaHibrida:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wdl-Sg-UF8"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="UuO-QQ-3Aa" secondAttribute="trailing" constant="-20" id="0x0-JR-dQF"/>
+                            <constraint firstItem="Jqo-Ei-UWO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1jh-NL-lte"/>
+                            <constraint firstItem="UuO-QQ-3Aa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="2Hi-b4-dYI"/>
+                            <constraint firstItem="24u-c5-0C1" firstAttribute="bottom" secondItem="Jqo-Ei-UWO" secondAttribute="bottom" id="642-5B-X7p"/>
+                            <constraint firstItem="24u-c5-0C1" firstAttribute="top" secondItem="UuO-QQ-3Aa" secondAttribute="bottom" constant="8" id="AYM-kJ-pBd"/>
+                            <constraint firstItem="Jqo-Ei-UWO" firstAttribute="bottom" secondItem="5Km-bZ-In6" secondAttribute="bottom" id="IbR-gF-b8p"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5Km-bZ-In6" secondAttribute="trailing" constant="-3" id="Kzp-dN-0tb"/>
+                            <constraint firstItem="Jqo-Ei-UWO" firstAttribute="leading" secondItem="24u-c5-0C1" secondAttribute="trailing" constant="66" id="Vh7-t3-kO2"/>
+                            <constraint firstItem="Jqo-Ei-UWO" firstAttribute="centerX" secondItem="UuO-QQ-3Aa" secondAttribute="centerX" id="VkI-zu-YQD"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="24u-c5-0C1" secondAttribute="bottom" constant="5" id="maR-8k-VFQ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="UuO-QQ-3Aa" id="hKL-sO-AVD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="162" y="339"/>
         </scene>
     </scenes>
 </document>
